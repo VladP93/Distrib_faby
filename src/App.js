@@ -1,65 +1,38 @@
+import { useState } from "react";
 import "./App.css";
-import { Menubar } from "primereact/menubar";
 import "primereact/resources/themes/nova/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
-import Logo from "./assets/logo192.png";
+import Navbar from "./components/common/Navbar";
 import Home from "./pages/Home/Home";
+import Productos from "./pages/Productos";
+
+import NotFound from "./pages/NotFound";
 
 function App() {
+  const [page, setPage] = useState("home");
+
+  const selectedPage = () => {
+    switch (page) {
+      case "home":
+        return <Home />;
+      case "products":
+        return <Productos />;
+      default:
+        return <NotFound />;
+    }
+  };
+
   return (
     <div className="App">
-      <Menubar
-        className="menubar"
-        model={items}
-        start={<img src={Logo} alt="Logo" style={{ height: 50, width: 80 }} />}
-      />
-      <div className="pages-container">
-        <Home />
-      </div>
+      <Navbar page={page} setPage={setPage} />
+      <div className="pages-container">{selectedPage()}</div>
       <div className="footer">
         <p>Distribuidora Faby &copy;</p>
       </div>
     </div>
   );
 }
-
-const items = [
-  {
-    label: "Inicio",
-    icon: "pi pi-fw pi-home",
-  },
-  {
-    label: "Productos",
-    icon: "pi pi-fw pi-tags",
-  },
-  {
-    label: "Acerca de",
-    icon: "pi pi-question-circle",
-  },
-  {
-    label: "Carrito",
-    icon: "pi pi-fw pi-shopping-cart",
-  },
-  {
-    label: "Mi perfil",
-    icon: "pi pi-fw pi-user",
-    items: [
-      {
-        label: "Cuenta",
-        icon: "pi pi-fw pi-user-edit",
-      },
-      {
-        label: "Pedidos",
-        icon: "pi pi-fw pi-clock",
-      },
-    ],
-  },
-  {
-    label: "Salir",
-    icon: "pi pi-fw pi-power-off",
-  },
-];
 
 export default App;

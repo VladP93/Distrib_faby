@@ -1,0 +1,10 @@
+.active .p-menuitem-text {
+  color: #4791b6 !important;
+}
+.active .p-menuitem-icon {
+  color: #4791b6 !important;
+}
+
+.active {
+  font-weight: bold;
+}

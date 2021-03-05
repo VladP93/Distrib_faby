@@ -2,12 +2,12 @@ import React from "react";
 import "./Home.css";
 import { Panel } from "primereact/panel";
 
-import Header from "../../components/Home/Header";
+import Header from "../../components/common/Header";
 
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Header text="Distribuidora Faby" showBanner />
       <Panel header="Mision" className="panel mision" toggleable>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
