@@ -14,6 +14,8 @@ import NotFound from "./pages/NotFound";
 function App() {
   const [page, setPage] = useState("home");
 
+  console.log(page);
+
   const selectedPage = () => {
     switch (page) {
       case "home":
@@ -22,6 +24,14 @@ function App() {
         return <Products />;
       case "about":
         return <About />;
+      case "cart":
+        return <NotFound />;
+      case "profile":
+        return <NotFound />;
+      case "account":
+        return <NotFound />;
+      case "history":
+        return <NotFound />;
       default:
         return <NotFound />;
     }

@@ -13,18 +13,37 @@ export default function About() {
 
       <Panel header="CONTACTO" className="panel" toggleable>
         <p>
-          Correo: <b>distribFaby@gmail.com</b>
+          Correo: <b>fabydistrib@gmail.com</b>
         </p>
         <p>
-          WhatsApp: <b>+503 73969289</b>
+          WhatsApp: <b>+503 7396-9289</b>
         </p>
         <p>
           Facebook:{" "}
           <a href="https://www.facebook.com/Distribuidora-Faby-101103272055255">
-            Ir a Facebook
+            <i className="pi pi-facebook"></i> Ir a Facebook
           </a>
         </p>
-        <p>Instagram:</p>
+        <p>
+          Twitter:{" "}
+          <a href="https://www.facebook.com/Distribuidora-Faby-101103272055255">
+            <i className="pi pi-twitter"></i> Ir a Twitter
+          </a>
+        </p>
+      </Panel>
+
+      <Panel header="FAQ's" className="panel" toggleable>
+        <Panel header="¿Donde están ubicados?" className="panel" toggleable>
+          <p>Somos una tienda en linea, no tenemos un local.</p>
+        </Panel>
+        <Panel header="¿Envío gratuito?" className="panel" toggleable>
+          <p>
+            El envío es gratuito por compras mayores al consumo mínimo ($5){" "}
+          </p>
+        </Panel>
+        <Panel header="¿Hacia donde hay envíos?" className="panel" toggleable>
+          <p>De momento solo en el área metropolitada de Santa Ana.</p>
+        </Panel>
       </Panel>
 
       <Panel header="POLÍTICA DE PRIVACIDAD" className="panel" toggleable>
@@ -197,25 +216,26 @@ export default function About() {
           funcionamiento en condiciones normales de los productos y sólo se
           harán efectivos estos términos si el equipo ha sido usado
           correctamente. Esto incluye:
-          <ul>
-            <li>
-              De acuerdo a las especificaciones técnicas indicadas para
-              cadaproducto.
-            </li>
-            <li>
-              En condiciones ambientales acorde con las especificaciones
-              indicadas por el fabricante.
-            </li>
-            <li>
-              En uso específico para la función con que fue diseñado de fábrica.
-            </li>
-            <li>
-              En condiciones de operación eléctricas acorde con las
-              especificaciones y tolerancias indicadas.
-            </li>
-          </ul>
-          <br />
-          <br />
+        </p>
+        <ul>
+          <li>
+            De acuerdo a las especificaciones técnicas indicadas para
+            cadaproducto.
+          </li>
+          <li>
+            En condiciones ambientales acorde con las especificaciones indicadas
+            por el fabricante.
+          </li>
+          <li>
+            En uso específico para la función con que fue diseñado de fábrica.
+          </li>
+          <li>
+            En condiciones de operación eléctricas acorde con las
+            especificaciones y tolerancias indicadas.
+          </li>
+        </ul>
+        <br />
+        <p>
           <b>COMPROBACIÓN ANTIFRAUDE</b>
           <br />
           La compra del cliente puede ser aplazada para la comprobación

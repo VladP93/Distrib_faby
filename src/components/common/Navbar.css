@@ -8,3 +8,11 @@
 .active {
   font-weight: bold;
 }
+
+.exit .p-menuitem-icon {
+  color: #df0000 !important;
+}
+
+.exit .p-menuitem-text {
+  color: #df0000 !important;
+}

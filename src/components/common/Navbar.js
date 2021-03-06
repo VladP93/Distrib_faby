@@ -35,24 +35,51 @@ export default function Navbar(props) {
     {
       label: "Carrito",
       icon: "pi pi-fw pi-shopping-cart",
+      className: page === "cart" && "active",
+      command: () => {
+        setPage("cart");
+      },
     },
     {
       label: "Mi perfil",
       icon: "pi pi-fw pi-user",
+      //className:
+      //  (page === "profile" || page === "history" || page === "account") &&
+      //  "active",
       items: [
+        {
+          label: "Mi perfil",
+          icon: "pi pi-fw pi-user",
+          className: page === "profile" && "active",
+          command: () => {
+            setPage("profile");
+          },
+        },
         {
           label: "Cuenta",
           icon: "pi pi-fw pi-user-edit",
+          className: page === "account" && "active",
+          command: () => {
+            setPage("account");
+          },
         },
         {
           label: "Pedidos",
           icon: "pi pi-fw pi-clock",
+          className: page === "history" && "active",
+          command: () => {
+            setPage("history");
+          },
         },
       ],
     },
     {
       label: "Salir",
       icon: "pi pi-fw pi-power-off",
+      className: "exit",
+      command: () => {
+        alert("Acá va a pasar una animación bien chiva para salir xD");
+      },
     },
   ];
   return (
