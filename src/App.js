@@ -6,7 +6,8 @@ import "primeicons/primeicons.css";
 
 import Navbar from "./components/common/Navbar";
 import Home from "./pages/Home/Home";
-import Productos from "./pages/Productos";
+import Products from "./pages/Products";
+import About from "./pages/About";
 
 import NotFound from "./pages/NotFound";
 
@@ -18,7 +19,9 @@ function App() {
       case "home":
         return <Home />;
       case "products":
-        return <Productos />;
+        return <Products />;
+      case "about":
+        return <About />;
       default:
         return <NotFound />;
     }

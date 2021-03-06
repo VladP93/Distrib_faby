@@ -27,6 +27,10 @@ export default function Navbar(props) {
     {
       label: "Acerca de",
       icon: "pi pi-question-circle",
+      className: page === "about" && "active",
+      command: () => {
+        setPage("about");
+      },
     },
     {
       label: "Carrito",

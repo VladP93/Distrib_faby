@@ -4,6 +4,15 @@
   min-height: 695px;
 }
 
+body {
+  background: rgb(71, 145, 182);
+  background: linear-gradient(
+    0deg,
+    rgba(71, 145, 182, 1) 0%,
+    rgba(217, 230, 239, 1) 100%
+  );
+}
+
 .pages-container {
   margin-top: 7%;
 }
