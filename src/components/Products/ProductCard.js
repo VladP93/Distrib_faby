@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
+import { InputNumber } from "primereact/inputnumber";
 
 export default function ProductCard(props) {
-  const { title, subtitle, description, image } = props;
+  const {
+    id,
+    title,
+    subtitle,
+    price,
+    description,
+    image,
+    cartList,
+    setCartList,
+    setRefreshCart,
+  } = props;
+  const [amount, setAmount] = useState(0);
 
   const header = (
     <img
@@ -17,9 +29,38 @@ export default function ProductCard(props) {
     />
   );
 
+  const Agregar = () => {
+    var itemFound = false;
+    for (var i = 0; i < cartList.length; i++) {
+      if (id === cartList[i].id) {
+        cartList[i].amount += amount;
+        itemFound = true;
+      }
+    }
+    if (!itemFound) {
+      cartList.push({
+        id,
+        title,
+        subtitle,
+        price,
+        description,
+        image,
+        amount,
+      });
+    }
+
+    setCartList(cartList);
+    setRefreshCart(true);
+  };
+
   const footer = (
     <span>
-      <Button label="Agregar" icon="pi pi-check" style={{ marginRight: 5 }} />
+      <Button
+        label="Agregar"
+        icon="pi pi-check"
+        style={{ marginRight: 5 }}
+        onClick={Agregar}
+      />
       <Button
         label="Detalles"
         icon="pi pi-list"
@@ -33,16 +74,24 @@ export default function ProductCard(props) {
     <div>
       <Card
         title={title}
-        subTitle={subtitle}
+        subTitle={subtitle + " $" + (Math.round(price * 100) / 100).toFixed(2)}
         style={{ width: "25em" }}
         footer={footer}
         header={header}
       >
         <p className="p-m-0" style={{ lineHeight: "1.5" }}>
           {description}
-        </p>
-        <label>Cantidad: </label>
-        <input type="number" style={{ width: 50 }} defaultValue={1} />
+        </p>{" "}
+        <br />
+        <label>
+          <b>Cantidad: </b>
+        </label>
+        <InputNumber
+          value={amount}
+          onValueChange={(e) => setAmount(e.value)}
+          min={1}
+          showButtons
+        />
       </Card>
     </div>
   );

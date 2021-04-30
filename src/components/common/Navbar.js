@@ -5,7 +5,7 @@ import Logo from "../../assets/logo192.png";
 import "./Navbar.css";
 
 export default function Navbar(props) {
-  const { page, setPage } = props;
+  const { page, setPage, cartList } = props;
 
   const items = [
     {
@@ -33,7 +33,7 @@ export default function Navbar(props) {
       },
     },
     {
-      label: "Carrito",
+      label: "Carrito (" + cartList.length + ")",
       icon: "pi pi-fw pi-shopping-cart",
       className: page === "cart" && "active",
       command: () => {
@@ -43,9 +43,6 @@ export default function Navbar(props) {
     {
       label: "Mi perfil",
       icon: "pi pi-fw pi-user",
-      //className:
-      //  (page === "profile" || page === "history" || page === "account") &&
-      //  "active",
       items: [
         {
           label: "Mi perfil",
@@ -82,6 +79,7 @@ export default function Navbar(props) {
       },
     },
   ];
+
   return (
     <Menubar
       className="menubar"
